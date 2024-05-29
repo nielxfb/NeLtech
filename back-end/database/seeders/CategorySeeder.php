@@ -15,7 +15,7 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
-        $categories = ["Network Devices", "Monitor", "Keyboard & Mouse", "Processor", "VGA Card"];
+        $categories = ["Network Devices", "Monitor", "Mouse & Keyboard", "Processor", "VGA Card"];
 
         foreach ($categories as $category) {
             Category::insert([

@@ -12,7 +12,36 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        try {
+            $products = Product::all();
+
+            return response()->json([
+                'success' => true,
+                'data' => $products
+            ], 200);
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Failed to fetch products: ' . $e->getMessage()
+            ], 500);
+        }
+    }
+
+    public function getProductByCategory($category_id)
+    {
+        try {
+            $products = Product::where('category_id', $category_id)->get();
+
+            return response()->json([
+                'success' => true,
+                'data' => $products
+            ], 200);
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Failed to fetch network devices: ' . $e->getMessage()
+            ], 500);
+        }
     }
 
     /**
