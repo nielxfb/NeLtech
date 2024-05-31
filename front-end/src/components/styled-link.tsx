@@ -6,7 +6,7 @@ interface ILink {
 }
 
 function StyledLink({ to, text }: ILink) {
-  return <Link to={to} className="text-xl font-semibold text-slate-700">{text}</Link>;
+  return <Link to={to} className="text-xl font-semibold text-blue-900">{text}</Link>;
 }
 
 export default StyledLink;

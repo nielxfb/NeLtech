@@ -1,12 +1,11 @@
-import Navbar from "../components/navbar";
+import { useEffect } from "react";
 
 function Products() {
-  return (
-    <div>
-      <Navbar />
-      Products
-    </div>
-  );
+  useEffect(() => {
+    document.title = "NeLtech - Products";
+  }, []);
+
+  return <div>Products</div>;
 }
 
 export default Products;

@@ -7,7 +7,8 @@ use Illuminate\Support\Facades\Artisan;
 
 class SeederController extends Controller
 {
-    public function seed() {
+    public function seed(Request $request)
+    {
         try {
             Artisan::call('migrate:fresh --seed');
 

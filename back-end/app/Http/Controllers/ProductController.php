@@ -27,7 +27,7 @@ class ProductController extends Controller
         }
     }
 
-    public function getProductByCategory($category_id)
+    public function getProductsByCategory($category_id)
     {
         try {
             $products = Product::where('category_id', $category_id)->get();

@@ -5,19 +5,32 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/home.tsx";
 import Products from "./pages/products.tsx";
 import AboutUs from "./pages/about-us.tsx";
+import NavbarLayout from "./layouts/navbar-layout.tsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: (
+      <NavbarLayout>
+        <Home />
+      </NavbarLayout>
+    ),
   },
   {
     path: "/products",
-    element: <Products />,
+    element: (
+      <NavbarLayout>
+        <Products />
+      </NavbarLayout>
+    ),
   },
   {
     path: "/about-us",
-    element: <AboutUs />,
+    element: (
+      <NavbarLayout>
+        <AboutUs />
+      </NavbarLayout>
+    ),
   },
 ]);
 
