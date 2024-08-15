@@ -27,23 +27,6 @@ class ProductController extends Controller
         }
     }
 
-    public function getProductsByCategory($category_id)
-    {
-        try {
-            $products = Product::where('category_id', $category_id)->get();
-
-            return response()->json([
-                'success' => true,
-                'data' => $products
-            ], 200);
-        } catch (\Exception $e) {
-            return response()->json([
-                'success' => false,
-                'message' => 'Failed to fetch network devices: ' . $e->getMessage()
-            ], 500);
-        }
-    }
-
     /**
      * Show the form for creating a new resource.
      */

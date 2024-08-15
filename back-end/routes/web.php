@@ -10,4 +10,3 @@ Route::get('/', function () {
 
 Route::get('/seed-database', [SeederController::class, 'seed']);
 Route::get('/get-products', [ProductController::class, 'index']);
-Route::get('/get-products-by-category/{category_id}', [ProductController::class, 'getProductsByCategory']);

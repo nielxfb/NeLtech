@@ -1,7 +1,8 @@
 import axios from "axios";
 import { IProduct } from "../interfaces/product-interface";
+import { Response } from "../interfaces/response-interface";
 
-const getProducts = async (): Promise<IProduct[]> => {
+const getProducts = async (): Promise<Response<IProduct[]>> => {
   try {
     const url = import.meta.env.VITE_API_URL + "/get-products";
     const response = await axios.get(url);
@@ -11,17 +12,4 @@ const getProducts = async (): Promise<IProduct[]> => {
   }
 };
 
-const getProductsByCategory = async (
-  categoryID: number
-): Promise<IProduct[]> => {
-  try {
-    const url =
-      import.meta.env.VITE_API_URL + `/get-products-by-category/${categoryID}`;
-    const response = await axios.get(url);
-    return response.data;
-  } catch (error) {
-    throw new Error((error as Error).message);
-  }
-};
-
-export { getProducts, getProductsByCategory };
+export { getProducts };

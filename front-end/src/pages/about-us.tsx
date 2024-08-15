@@ -5,7 +5,9 @@ function AboutUs() {
     document.title = "NeLtech - About Us";
   }, []);
 
-  return <div>AboutUs</div>;
+  return (
+    <div className="flex flex-col items-center justify-center w-full h-full gap-8 bg-[url('./23-2.png')] bg-cover bg-center"></div>
+  );
 }
 
 export default AboutUs;
