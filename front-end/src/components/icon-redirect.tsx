@@ -5,7 +5,7 @@ interface IIconRedirect {
 
 function IconRedirect({ url, icon }: IIconRedirect) {
   return (
-    <a href={url}>
+    <a href={url} target="_blank">
         {icon}
     </a>
   )
